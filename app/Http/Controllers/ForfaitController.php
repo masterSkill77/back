@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ForfaitController extends Controller
 {
-    public function get()
+    public function index()
     {
         return response()->json(Forfait::all());
     }

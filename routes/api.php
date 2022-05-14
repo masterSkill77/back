@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/publication', [ForfaitController::class, 'store']);
+
+
+Route::apiResource('/forfait', ForfaitController::class);
