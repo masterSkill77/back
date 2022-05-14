@@ -12,7 +12,7 @@ class Publication extends Controller
 {
     public function index()
     {
-        return response()->json();
+        return response()->json(PublicationModel::all());
     }
     public function store(Request $request)
     {
@@ -22,10 +22,12 @@ class Publication extends Controller
         // $client = User::find($publication->id_user);
         $publication->id_user = 1;
 
-        $size = $request->file('file')->getSize();
-        $path = $request->file('file')->store('/public/files');
-        $publication->path = 'storage/' . $path;
-        $publication->taille = $size;
+        if ($request->file('file')) {
+            $size = $request->file('file')->getSize();
+            $path = $request->file('file')->store('/public/files');
+            $publication->path = 'storage/' . $path;
+            $publication->taille = $size;
+        }
         $publication->save();
 
         return $publication;

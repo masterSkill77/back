@@ -16,10 +16,10 @@ class CreatePublicationsTable extends Migration
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->string('taille');
+            $table->string('taille')->nullable();
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('user');
-            $table->string("path");
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->string("path")->nullable();
             $table->timestamps();
         });
     }
