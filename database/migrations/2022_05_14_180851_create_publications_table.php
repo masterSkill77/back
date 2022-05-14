@@ -18,7 +18,7 @@ class CreatePublicationsTable extends Migration
             $table->text('content');
             $table->string('taille');
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->on('user')->references('id');
+            $table->foreign('id_user')->references('id')->on('user');
             $table->string("path");
             $table->timestamps();
         });

@@ -10,6 +10,10 @@ use App\Models\User;
 
 class Publication extends Controller
 {
+    public function index()
+    {
+        return response()->json();
+    }
     public function store(Request $request)
     {
         $publication = new PublicationModel();
@@ -17,7 +21,6 @@ class Publication extends Controller
         // $publication->id_user = Auth::user()->id;
         // $client = User::find($publication->id_user);
         $publication->id_user = 1;
-
 
         $size = $request->file('file')->getSize();
         $path = $request->file('file')->store('/public/files');

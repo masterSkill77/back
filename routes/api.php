@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/publication', [ForfaitController::class, 'store']);
+Route::apiResource('/publication', Publication::class);
 
 
 Route::apiResource('/forfait', ForfaitController::class);
