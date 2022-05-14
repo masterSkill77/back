@@ -6,5 +6,13 @@ use Illuminate\Http\Request;
 
 class User extends Controller
 {
-    pubcl
+    public function getUser(Request $request)
+    {
+        return Auth::user();
+    }
+
+    public function getUserConnected($id)
+    {
+        return response()->json(User::with('forfait')->get());
+    }
 }

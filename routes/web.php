@@ -22,3 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/payer', [Payment::class, 'payer']);
+Route::get('/current-user', [User::class, 'getUser']);
