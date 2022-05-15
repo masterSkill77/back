@@ -62,11 +62,7 @@
                                     <input type="password" class="form-control p_input "
                                     name="password_confirmation">
                                 </div>
-                                <div class="form-group">
-                                    <label>Image de profil</label>
-                                    <input type="file" name="profileImage" class="form-control p_input @error('profileImage') is-invalid @enderror"
-                                    name="file" accept="image/*">
-                                </div>
+                                
                                 @error('profileImage')
                                 <span class="invalid-feedback text-white mb-3 d-block" role="alert">
                                     <strong>{{ $message }}</strong>
