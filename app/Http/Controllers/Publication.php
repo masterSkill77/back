@@ -12,7 +12,7 @@ class Publication extends Controller
 {
     public function index()
     {
-        return response()->json(PublicationModel::all());
+        return response()->json(PublicationModel::all()->random(10));
     }
     public function store(Request $request)
     {
