@@ -104,7 +104,7 @@
     <script src="/dashboard/assets/js/settings.js"></script>
     <script src="/dashboard/assets/js/todolist.js"></script>
     <script>
-        $.get('http://app-webcup.herokuapp.com/api/forfait', (data) => {
+        $.get('https://app-webcup.herokuapp.com/api/forfait', (data) => {
             let html = ''
             data.forEach(element => {
                 html += `<div class="card mb-2">
