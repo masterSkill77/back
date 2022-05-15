@@ -29,13 +29,13 @@
                     <div class="card col-lg-4 mx-auto" style="background-color:rgba(17, 141, 208, 0.837) ">
                         <div class="card-body px-5 py-5">
                             <h3 class="card-title text-left mb-3">Abonnement</h3>
-                            <form action="{{route('register')}}" method="POST">
+                            <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
                                 
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">                                <div class="form-group">
                                 <div class="form-group">
                                     <label>Email *</label>
                                     <input type="email" class="form-control p_input @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('name') }}" >
+                                    value="{{ old('email') }}" >
                                 </div>
                                 @error('email')
                                     <span class="invalid-feedback text-white mb-3 d-block" role="alert">
@@ -65,7 +65,7 @@
                                 <div class="form-group">
                                     <label>Image de profil</label>
                                     <input type="file" name="profileImage" class="form-control p_input @error('profileImage') is-invalid @enderror"
-                                    name="file">
+                                    name="file" accept="image/*">
                                 </div>
                                 @error('profileImage')
                                 <span class="invalid-feedback text-white mb-3 d-block" role="alert">
